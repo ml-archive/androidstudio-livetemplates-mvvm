@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugins>
+    <plugin
+            id="com.nodes.plugin"
+            url="https://github.com/Tgo1014/Nodes-Template-Plugin/raw/master/com.nodes.plugin-1.0.1.zip"
+            version="1.0.1">
+        <name>Nodes Arch Template Plugin</name>
+        <description><![CDATA[For adding Nodes specific interactors/fragments/activities]]></description>
+    </plugin>
+</plugins>
+

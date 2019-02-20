@@ -1,0 +1,8 @@
+package ${packageName}
+
+import javax.inject.Inject
+
+class ${className} @Inject constructor() : BasePresenterImpl<${contractName}.View>(), ${contractName}.Presenter {
+
+
+}

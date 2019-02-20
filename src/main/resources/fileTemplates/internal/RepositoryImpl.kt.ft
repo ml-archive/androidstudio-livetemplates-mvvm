@@ -1,0 +1,25 @@
+package ${packageName}
+
+class ${className}: ${repositoryClass} {
+
+    @Throws(RepositoryException::class)
+    override suspend fun get${methodName}(cached: Boolean): ${returnType} {
+
+        // TODO Your code here
+
+        throw(RepositoryException(400, ""))
+    }
+
+    override suspend fun update${methodName}() {
+        // TODO your code
+    }
+
+    override suspend fun delete${methodName}() {
+        // TODO your code
+    }
+
+    override suspend fun add${methodName}(${paramName}: ${returnType}) {
+        // TODO your code
+    }
+
+}

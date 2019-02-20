@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugins>
+    <plugin
+            id="#package"
+            url="https://github.com/Tgo1014/Nodes-Template-Plugin/raw/master/#filename"
+            version="#version">
+        <name>#name</name>
+        <description>#description</description>
+    </plugin>
+</plugins>
+

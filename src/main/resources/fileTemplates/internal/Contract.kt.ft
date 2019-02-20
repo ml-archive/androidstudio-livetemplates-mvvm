@@ -1,0 +1,12 @@
+package ${packageName}
+
+interface ${className} {
+
+    @UiThread
+    interface View: BaseView {
+    }
+
+    interface Presenter: BasePresenter<View> {
+    }
+    
+}

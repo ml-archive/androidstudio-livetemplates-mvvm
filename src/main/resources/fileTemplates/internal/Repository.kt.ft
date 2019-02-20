@@ -1,0 +1,8 @@
+package ${packageName}
+
+interface ${className} {
+    suspend fun get${methodName}(cached: Boolean = false): ${returnType}
+    suspend fun update${methodName}()
+    suspend fun delete${methodName}()
+    suspend fun add${methodName}(${paramName}: ${returnType})
+}

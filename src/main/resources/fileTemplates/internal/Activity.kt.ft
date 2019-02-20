@@ -1,0 +1,26 @@
+package ${packageName}
+
+import android.os.Bundle
+import javax.inject.Inject
+
+class ${className} : BaseActivity(), ${contractName}.View {
+
+    @Inject
+    lateinit var presenter: ${contractName}.Presenter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.${layoutName})
+
+        presenter.onViewCreated(this, lifecycle)
+    }
+
+    override fun setupTranslations() {
+        //TODO Add your nStack Translations here
+    }
+
+    override fun injectDependencies() {
+    }
+
+}
