@@ -17,7 +17,7 @@ In order to use the plugin first is needed to add a custom plugin repository to 
 -   Right click on the parent folder where you want it to be created
 -   New > Nodes and choose the template you want
 
-![Example](https://github.com/nodes-android/as-plugins-repo/raw/master/assets/example.png "Example")
+![](https://raw.githubusercontent.com/nodes-android/androidstudio-livetemplates-mvvm/master/assets/example.png)
 
 #### 💻 Developers
 @tiar
