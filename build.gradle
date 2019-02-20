@@ -42,7 +42,7 @@ patchPluginXml {
         File template = new File("$rootDir/placeholder/updatePlugins_tmpl.xml")
         String templateContent = new StringBuffer(template.text.toString())
         templateContent = templateContent.replaceAll("#package", GROUP)
-        templateContent = templateContent.replaceAll("#filename", zipFile.getName())
+        templateContent = templateContent.replaceAll("#filename", zipFile.getName().replace("zip","jar"))
         templateContent = templateContent.replaceAll("#version", VERSION)
         templateContent = templateContent.replaceAll("#name", (project.NAME as String).replace("\"", ""))
         templateContent = templateContent.replaceAll("#description", (project.DESCRIPTION as String).replace("\"", ""))
