@@ -2,7 +2,7 @@
 <plugins>
     <plugin
             id="com.nodes.plugin"
-            url="https://github.com/Tgo1014/Nodes-Template-Plugin/raw/master/com.nodes.plugin-1.0.0.jar"
+            url="https://github.com/nodes-android/as-plugins-repo/raw/master/com.nodes.plugin-1.0.0.jar"
             version="1.0.0">
         <name>Nodes Arch Template Plugin</name>
         <description><![CDATA[For adding Nodes specific interactors/fragments/activities]]></description>

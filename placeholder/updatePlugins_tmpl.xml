@@ -2,7 +2,7 @@
 <plugins>
     <plugin
             id="#package"
-            url="https://github.com/Tgo1014/Nodes-Template-Plugin/raw/master/#filename"
+            url="https://github.com/nodes-android/as-plugins-repo/raw/master/#filename"
             version="#version">
         <name>#name</name>
         <description>#description</description>
