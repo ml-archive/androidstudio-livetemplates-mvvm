@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.4.2'
-    id 'org.jetbrains.kotlin.jvm' version '1.3.21'
+    id 'org.jetbrains.intellij' version '0.4.9'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.41'
 }
 
 apply plugin: 'idea'
@@ -29,8 +29,9 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 intellij {
-    version '2018.2'
-    alternativeIdePath = '/Applications/Android Studio.app'
+    plugins = ['Kotlin', 'git4idea', 'android']
+    updateSinceUntilBuild false
+    localPath ASRunPath
 }
 tasks.withType(Jar) {
     destinationDir = file("$rootDir/distribution")
