@@ -10,8 +10,8 @@ object TemplateProperties {
     const val METHOD_NAME       = "methodName"
     const val PARAM_NAME        = "paramName"
     const val VIEW_STATE_CLASS  = "vsClass"
-    const val FRAGMENT_CLASS  = "fragmentClass"
-    const val FRAGMENT_NAME  = "fragmentName"
+    const val CLASS  = "class"
+    const val NAME  = "name"
     const val REPOSITORY_CLASS  = "repositoryClass"
     const val PACKAGE_PRESENTATION_NAME = "packagePresentationName"
 }

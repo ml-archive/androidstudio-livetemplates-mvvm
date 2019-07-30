@@ -2,8 +2,7 @@ package com.nodes.plugin.actions
 
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.nodes.plugin.dialogs.ActivityDialog
-import com.nodes.plugin.generators.BuilderActivityGenerator
-import com.nodes.plugin.generators.BuilderFragmentGenerator
+import com.nodes.plugin.generators.BuilderGenerator
 import com.nodes.plugin.generators.ViewModelGenerator
 import com.nodes.plugin.generators.ViewStateGenerator
 import com.nodes.plugin.generators.activity.ActivityGenerator
@@ -26,7 +25,7 @@ class ActivityAction : BaseAction<Activity>() {
         ActivityLayoutGenerator().generateFiles(directory, data)
         ViewModelGenerator().generateFiles(directory, Naming(data.name, "Activity"))
         ViewStateGenerator().generateFiles(directory, Naming(data.name, "Activity"))
-        BuilderActivityGenerator().generateFiles(directory, Naming(data.name, "Activity"))
+        BuilderGenerator().generateFiles(directory, Naming(data.name, "Activity", viewModelName = "${data.name.capitalize()}ActivityViewModel"))
     }
 
 }
