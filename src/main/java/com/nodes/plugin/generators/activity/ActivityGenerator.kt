@@ -18,7 +18,7 @@ class ActivityGenerator : BaseGenerator<Activity>() {
     override val getTemplate: TemplateMap = TemplateMap.ACTIVITY
 
     override fun getPackageName(modelObject: Activity) = modelObject.name
-    override fun getClassName(modelObject: Activity) = "${modelObject.name}Activity"
+    override fun getClassName(modelObject: Activity) = "${modelObject.name.capitalize()}Activity"
 
     override fun additionalProperties(modelObject: Activity, properties: Properties?): Properties? {
         return Properties().apply {

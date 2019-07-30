@@ -11,5 +11,6 @@ enum class TemplateMap(val templateName: String) {
     VIEW_MODEL("ViewModel"),
     VIEW_STATE("ViewState"),
     Builder("Builder"),
-    BuilderFragment("BuilderFragment")
+    BuilderFragment("BuilderFragment"),
+    BuilderActivity("BuilderActivity")
 }
