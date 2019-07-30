@@ -12,7 +12,7 @@ class RepositoryImplGenerator : BaseGenerator<Repository>() {
     override fun getClassName(modelObject: Repository) = "${modelObject.name}RepositoryImpl"
     override fun getPackageName(modelObject: Repository) = modelObject.name
 
-    override fun additionalProperties(modelObject: Repository): Properties? {
+    override fun additionalProperties(modelObject: Repository, properties: Properties?): Properties? {
         return Properties().apply {
             setProperty(TemplateProperties.REPOSITORY_CLASS,    "${modelObject.name}Repository")
             setProperty(TemplateProperties.RETURN_TYPE,         modelObject.returnType)

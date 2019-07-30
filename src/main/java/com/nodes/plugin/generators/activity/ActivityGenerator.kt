@@ -20,7 +20,7 @@ class ActivityGenerator : BaseGenerator<Activity>() {
     override fun getPackageName(modelObject: Activity) = modelObject.name
     override fun getClassName(modelObject: Activity) = "${modelObject.name}Activity"
 
-    override fun additionalProperties(modelObject: Activity): Properties? {
+    override fun additionalProperties(modelObject: Activity, properties: Properties?): Properties? {
         return Properties().apply {
             setProperty(TemplateProperties.CONTRACT_NAME,   "${modelObject.name}Contract")
             setProperty(TemplateProperties.LAYOUT_NAME,     generateActivityLayoutName(modelObject.name))

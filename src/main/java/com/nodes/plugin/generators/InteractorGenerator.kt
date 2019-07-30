@@ -11,7 +11,7 @@ class InteractorGenerator : BaseGenerator<Interactor>() {
     override fun getPackageName(modelObject: Interactor) = modelObject.name
     override fun getClassName(modelObject: Interactor) = "${modelObject.name}Interactor"
 
-    override fun additionalProperties(modelObject: Interactor): Properties? {
+    override fun additionalProperties(modelObject: Interactor, properties: Properties?): Properties? {
         return Properties().apply {
             setProperty(TemplateProperties.RETURN_TYPE, modelObject.returnType)
         }

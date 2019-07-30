@@ -15,7 +15,7 @@ abstract class BaseGenerator<T> {
     abstract fun getClassName(modelObject: T): String
     abstract fun getPackageName(modelObject: T): String
 
-    open fun additionalProperties(modelObject: T): Properties? = null
+    open fun additionalProperties(modelObject: T, properties: Properties? = null): Properties? = null
     open fun getCustomDir(directory: PsiDirectory): PsiDirectory? = null
     open fun executeAdditionalActions(dir: PsiDirectory, generatedFile: PsiFile?, modelObject: T) {}
 
@@ -29,11 +29,11 @@ abstract class BaseGenerator<T> {
             dir = getCustomDir(dir)!!
         }
 
-        val className = getClassName(modelObject).capitalize()
+        val className = getClassName(modelObject)
 
         val properties = generateDefaultProperties(dir)
         properties.setProperty(TemplateProperties.CLASS_NAME, className)
-        additionalProperties(modelObject)?.forEach { properties[it.key] = it.value }
+        additionalProperties(modelObject, properties)?.forEach { properties[it.key] = it.value }
 
         createFile = TemplateFileGenerator.generateFile(className, dir, getTemplate, properties)
         executeAdditionalActions(dir, createFile, modelObject)

@@ -1,0 +1,20 @@
+package ${packageName}
+
+import androidx.lifecycle.ViewModel
+import dagger.Binds
+import dagger.Module
+import dagger.android.ContributesAndroidInjector
+import dagger.multibindings.IntoMap
+import ${packagePresentationName}.injection.ViewModelKey
+
+@Module
+abstract class ${className} {
+
+    @ContributesAndroidInjector
+    abstract fun ${fragmentName}(): ${fragmentClass}
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(${viewModel}::class)
+    internal abstract fun bind${viewModel}(viewModel: ${viewModel}): ViewModel
+}

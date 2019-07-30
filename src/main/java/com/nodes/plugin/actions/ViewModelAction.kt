@@ -17,8 +17,8 @@ class ViewModelAction : BaseAction<ViewModel>() {
 
     override fun onDialogOk(data: ViewModel) {
         super.onDialogOk(data)
-        ViewModelGenerator().generateFiles(directory, modelObject)
-        ViewStateGenerator().generateFiles(directory, modelObject)
+//        ViewModelGenerator().generateFiles(directory, modelObject)
+//        ViewStateGenerator().generateFiles(directory, modelObject)
     }
 
 }

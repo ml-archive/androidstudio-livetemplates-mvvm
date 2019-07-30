@@ -51,11 +51,11 @@
                         text="Interactor"
                         description="Create a new Interactor file"/>
 
-                <action id="NodesPlugin.NewMenu.Arch.ViewModel"
-                        icon="/icons/nodes.png"
-                        class="com.nodes.plugin.actions.ViewModelAction"
-                        text="ViewModel + ViewState"
-                        description="Create ViewModel + ViewState files"/>
+<!--                <action id="NodesPlugin.NewMenu.Arch.ViewModel"-->
+<!--                        icon="/icons/nodes.png"-->
+<!--                        class="com.nodes.plugin.actions.ViewModelAction"-->
+<!--                        text="ViewModel + ViewState"-->
+<!--                        description="Create ViewModel + ViewState files"/>-->
 
             </group>
 
