@@ -2,7 +2,7 @@ package com.nodes.plugin.actions
 
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.nodes.plugin.dialogs.FragmentDialog
-import com.nodes.plugin.generators.BuilderGenerator
+import com.nodes.plugin.generators.BuilderFragmentGenerator
 import com.nodes.plugin.generators.ViewModelGenerator
 import com.nodes.plugin.generators.ViewStateGenerator
 import com.nodes.plugin.generators.fragment.FragmentGenerator
@@ -24,7 +24,7 @@ class FragmentAction : BaseAction<Fragment>() {
         FragmentLayoutGenerator().generateFiles(directory, data)
         ViewModelGenerator().generateFiles(directory, data.name)
         ViewStateGenerator().generateFiles(directory, data.name)
-        BuilderGenerator().generateFiles(directory, data.name)
+        BuilderFragmentGenerator().generateFiles(directory, data.name)
     }
 
 }

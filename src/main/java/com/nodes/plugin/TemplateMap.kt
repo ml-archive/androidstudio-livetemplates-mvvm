@@ -10,5 +10,6 @@ enum class TemplateMap(val templateName: String) {
     REPOSITORY_IMPL("RepositoryImpl"),
     VIEW_MODEL("ViewModel"),
     VIEW_STATE("ViewState"),
-    Builder("Builder")
+    Builder("Builder"),
+    BuilderFragment("BuilderFragment")
 }

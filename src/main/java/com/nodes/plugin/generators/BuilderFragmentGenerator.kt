@@ -4,9 +4,9 @@ import com.nodes.plugin.TemplateMap
 import com.nodes.plugin.models.ViewModel
 import java.util.*
 
-class BuilderGenerator : BaseGenerator<String>() {
+class BuilderFragmentGenerator : BaseGenerator<String>() {
 
-    override val getTemplate = TemplateMap.Builder
+    override val getTemplate = TemplateMap.BuilderFragment
 
     override fun getPackageName(modelObject: String) = modelObject
     override fun getClassName(modelObject: String) = "${modelObject.capitalize()}Builder"
