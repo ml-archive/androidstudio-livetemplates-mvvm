@@ -2,11 +2,13 @@ package com.nodes.plugin.actions
 
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.nodes.plugin.dialogs.FragmentDialog
-import com.nodes.plugin.generators.ContractGenerator
-import com.nodes.plugin.generators.PresenterGenerator
+import com.nodes.plugin.generators.BuilderGenerator
+import com.nodes.plugin.generators.ViewModelGenerator
+import com.nodes.plugin.generators.ViewStateGenerator
 import com.nodes.plugin.generators.fragment.FragmentGenerator
 import com.nodes.plugin.generators.fragment.FragmentLayoutGenerator
 import com.nodes.plugin.models.Fragment
+import com.nodes.plugin.models.Naming
 
 class FragmentAction : BaseAction<Fragment>() {
 
@@ -21,8 +23,9 @@ class FragmentAction : BaseAction<Fragment>() {
         super.onDialogOk(data)
         FragmentGenerator().generateFiles(directory, data)
         FragmentLayoutGenerator().generateFiles(directory, data)
-        ContractGenerator().generateFiles(directory, data.name)
-        PresenterGenerator().generateFiles(directory, data.name)
+        ViewModelGenerator().generateFiles(directory, Naming(data.name))
+        ViewStateGenerator().generateFiles(directory, Naming(data.name))
+        BuilderGenerator().generateFiles(directory, Naming(data.name, "Fragment", false, "${data.name.capitalize()}ViewModel"))
     }
 
 }

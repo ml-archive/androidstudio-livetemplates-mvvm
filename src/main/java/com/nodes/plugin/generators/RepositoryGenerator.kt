@@ -12,7 +12,7 @@ class RepositoryGenerator : BaseGenerator<Repository>() {
     override fun getClassName(modelObject: Repository) = "${modelObject.name}Repository"
     override fun getPackageName(modelObject: Repository) = modelObject.name
 
-    override fun additionalProperties(modelObject: Repository): Properties? {
+    override fun additionalProperties(modelObject: Repository, properties: Properties?): Properties? {
         return Properties().apply {
             setProperty(TemplateProperties.RETURN_TYPE,     modelObject.returnType)
             setProperty(TemplateProperties.METHOD_NAME,     TextUtils.textForMethodName(modelObject.returnType))

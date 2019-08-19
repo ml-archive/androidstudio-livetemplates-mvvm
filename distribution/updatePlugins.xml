@@ -2,8 +2,8 @@
 <plugins>
     <plugin
             id="com.nodes.plugin"
-            url="https://github.com/nodes-android/as-plugins-repo/raw/master/com.nodes.plugin-1.0.0.jar"
-            version="1.0.0">
+            url="https://github.com/nodes-android/as-plugins-repo/raw/master/com.nodes.plugin-1.1.0.jar"
+            version="1.1.0">
         <name>Nodes Arch Template Plugin</name>
         <description><![CDATA[For adding Nodes specific interactors/fragments/activities]]></description>
     </plugin>

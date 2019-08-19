@@ -1,7 +1,10 @@
 package ${packageName}
 
+import ${packagePresentationName}.util.SingleEvent
+import ${packagePresentationName}.util.ViewError
+
 data class ${className}(
         val data: Any = Any(),
-        val errorMessage: Event<String>? = null,
+        val viewError: SingleEvent<ViewError>? = null,
         val isLoading: Boolean = false
 )

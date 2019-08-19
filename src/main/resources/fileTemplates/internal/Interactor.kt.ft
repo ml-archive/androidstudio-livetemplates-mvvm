@@ -1,15 +1,11 @@
 package ${packageName}
 
 import javax.inject.Inject
+import ${packageDomainName}.domain.interactors.BaseAsyncInteractor
 
-class ${className} @Inject constructor(): BaseAsyncInteractor<Result<${returnType}>> {
+class ${className} @Inject constructor(): BaseAsyncInteractor<${returnType}> {
 
-    override suspend fun run(): Result<${returnType}> {
-        return try {
-            Result.Success(TODO())
-        } catch (e: RepositoryException) {
-            Result.Error(e)
-        }
+    override suspend fun invoke(): ${returnType} {
+        TODO()
     }
-
 }

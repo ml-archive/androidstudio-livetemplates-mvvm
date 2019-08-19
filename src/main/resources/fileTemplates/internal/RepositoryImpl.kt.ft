@@ -1,25 +1,27 @@
 package ${packageName}
 
-class ${className}: ${repositoryClass} {
+import ${packageRepositoryName}.repositories.RepositoryException
+import javax.inject.Inject
 
-    @Throws(RepositoryException::class)
+class ${className} @Inject constructor(): ${repositoryClass} {
+
     override suspend fun get${methodName}(cached: Boolean): ${returnType} {
 
         // TODO Your code here
 
-        throw(RepositoryException(400, ""))
+        throw(RepositoryException(400, "", ""))
     }
 
     override suspend fun update${methodName}() {
-        // TODO your code
+        TODO() // your code here
     }
 
     override suspend fun delete${methodName}() {
-        // TODO your code
+        TODO() // your code here
     }
 
     override suspend fun add${methodName}(${paramName}: ${returnType}) {
-        // TODO your code
+        TODO() // your code here
     }
 
 }

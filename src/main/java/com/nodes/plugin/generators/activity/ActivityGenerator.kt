@@ -18,12 +18,20 @@ class ActivityGenerator : BaseGenerator<Activity>() {
     override val getTemplate: TemplateMap = TemplateMap.ACTIVITY
 
     override fun getPackageName(modelObject: Activity) = modelObject.name
-    override fun getClassName(modelObject: Activity) = "${modelObject.name}Activity"
+    override fun getClassName(modelObject: Activity) = "${modelObject.name.capitalize()}Activity"
 
-    override fun additionalProperties(modelObject: Activity): Properties? {
-        return Properties().apply {
-            setProperty(TemplateProperties.CONTRACT_NAME,   "${modelObject.name}Contract")
-            setProperty(TemplateProperties.LAYOUT_NAME,     generateActivityLayoutName(modelObject.name))
+    override fun additionalProperties(modelObject: Activity, properties: Properties?): Properties? {
+        val pack = properties?.get(TemplateProperties.PACKAGE_NAME) as String?
+        return if(pack != null && pack.contains(".ui.")) {
+            val subPack = pack.substring(0, pack.indexOf(".ui."))
+            Properties().apply {
+                setProperty(TemplateProperties.LAYOUT_NAME,     generateActivityLayoutName(modelObject.name))
+                setProperty(TemplateProperties.PACKAGE_PRESENTATION_NAME, subPack)
+            }
+        } else {
+            Properties().apply {
+                setProperty(TemplateProperties.LAYOUT_NAME,     generateActivityLayoutName(modelObject.name))
+            }
         }
     }
 

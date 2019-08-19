@@ -4,22 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import javax.inject.Inject
+import ${packagePresentationName}.R
+import ${packagePresentationName}.extensions.observeNonNull
+import ${packagePresentationName}.ui.base.BaseFragment
+import kotlinx.android.synthetic.main.${layoutName}.*
 
-class ${className} : BaseFragment(), ${contractName}.View {
-    @Inject
-    lateinit var presenter: ${contractName}.Presenter
+class ${className} : BaseFragment() {
+
+    private val viewModel by viewModel<${viewModel}>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.${layoutName}, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        
-        presenter.onViewCreated(this, lifecycle)
-    }
-    
-    override fun injectDependencies() {
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel.viewState.observeNonNull(this) { state ->
+
+        }
     }
 }
