@@ -14,4 +14,6 @@ object TemplateProperties {
     const val NAME  = "name"
     const val REPOSITORY_CLASS  = "repositoryClass"
     const val PACKAGE_PRESENTATION_NAME = "packagePresentationName"
+    const val PACKAGE_DOMAIN_NAME = "packageDomainName"
+    const val PACKAGE_REPOSITORY_NAME = "packageRepositoryName"
 }
