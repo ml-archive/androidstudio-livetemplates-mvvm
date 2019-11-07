@@ -3,7 +3,7 @@ package com.nodes.plugin.generators
 import com.nodes.plugin.TemplateMap
 import com.nodes.plugin.models.Repository
 import com.nodes.plugin.utils.TextUtils
-import java.util.*
+import java.util.Properties
 
 class RepositoryImplGenerator : BaseGenerator<Repository>() {
 
@@ -14,10 +14,10 @@ class RepositoryImplGenerator : BaseGenerator<Repository>() {
 
     override fun additionalProperties(modelObject: Repository, properties: Properties?): Properties? {
         return Properties().apply {
-            setProperty(TemplateProperties.REPOSITORY_CLASS,    "${modelObject.name}Repository")
-            setProperty(TemplateProperties.RETURN_TYPE,         modelObject.returnType)
-            setProperty(TemplateProperties.METHOD_NAME,         TextUtils.textForMethodName(modelObject.returnType))
-            setProperty(TemplateProperties.PARAM_NAME,          TextUtils.textForParam(modelObject.returnType))
+            setProperty(TemplateProperties.REPOSITORY_CLASS, "${modelObject.name}Repository")
+            setProperty(TemplateProperties.RETURN_TYPE, modelObject.returnType)
+            setProperty(TemplateProperties.METHOD_NAME, TextUtils.textForMethodName(modelObject.returnType))
+            setProperty(TemplateProperties.PARAM_NAME, TextUtils.textForParam(modelObject.returnType))
             val pack = properties?.get(TemplateProperties.PACKAGE_NAME) as String?
             if (pack != null && pack.contains(".repositories.")) {
                 val subPack = pack.substring(0, pack.indexOf(".repositories."))
@@ -25,5 +25,4 @@ class RepositoryImplGenerator : BaseGenerator<Repository>() {
             }
         }
     }
-
 }

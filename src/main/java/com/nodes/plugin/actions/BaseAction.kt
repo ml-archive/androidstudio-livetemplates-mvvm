@@ -24,5 +24,4 @@ abstract class BaseAction<T> : AnAction(), DialogListener<T> {
         this.modelObject = data
         this.directory = actionEvent.getData(CommonDataKeys.PSI_ELEMENT) as PsiDirectory
     }
-
 }

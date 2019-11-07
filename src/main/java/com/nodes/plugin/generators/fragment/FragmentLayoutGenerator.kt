@@ -18,5 +18,4 @@ class FragmentLayoutGenerator : BaseGenerator<Fragment>() {
     }
 
     private fun generateLayoutName(name: String) = "fragment_" + name.toLowerCase()
-
 }

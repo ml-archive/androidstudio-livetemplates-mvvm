@@ -11,7 +11,7 @@ import com.nodes.plugin.generators.BaseGenerator
 import com.nodes.plugin.generators.TemplateFileGenerator
 import com.nodes.plugin.generators.TemplateProperties
 import com.nodes.plugin.models.Activity
-import java.util.*
+import java.util.Properties
 
 class ActivityGenerator : BaseGenerator<Activity>() {
 
@@ -22,15 +22,15 @@ class ActivityGenerator : BaseGenerator<Activity>() {
 
     override fun additionalProperties(modelObject: Activity, properties: Properties?): Properties? {
         val pack = properties?.get(TemplateProperties.PACKAGE_NAME) as String?
-        return if(pack != null && pack.contains(".ui.")) {
+        return if (pack != null && pack.contains(".ui.")) {
             val subPack = pack.substring(0, pack.indexOf(".ui."))
             Properties().apply {
-                setProperty(TemplateProperties.LAYOUT_NAME,     generateActivityLayoutName(modelObject.name))
+                setProperty(TemplateProperties.LAYOUT_NAME, generateActivityLayoutName(modelObject.name))
                 setProperty(TemplateProperties.PACKAGE_PRESENTATION_NAME, subPack)
             }
         } else {
             Properties().apply {
-                setProperty(TemplateProperties.LAYOUT_NAME,     generateActivityLayoutName(modelObject.name))
+                setProperty(TemplateProperties.LAYOUT_NAME, generateActivityLayoutName(modelObject.name))
             }
         }
     }
@@ -74,6 +74,4 @@ class ActivityGenerator : BaseGenerator<Activity>() {
     }
 
     private fun generateActivityLayoutName(name: String) = "activity_" + name.toLowerCase()
-
-
 }

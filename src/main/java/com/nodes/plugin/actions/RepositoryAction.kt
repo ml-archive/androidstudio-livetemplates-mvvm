@@ -6,7 +6,7 @@ import com.nodes.plugin.generators.RepositoryGenerator
 import com.nodes.plugin.generators.RepositoryImplGenerator
 import com.nodes.plugin.models.Repository
 
-class RepositoryAction : BaseAction<Repository>(){
+class RepositoryAction : BaseAction<Repository>() {
 
     override lateinit var modelObject: Repository
 
@@ -20,5 +20,4 @@ class RepositoryAction : BaseAction<Repository>(){
         RepositoryGenerator().generateFiles(directory, modelObject)
         RepositoryImplGenerator().generateFiles(directory, modelObject)
     }
-
 }

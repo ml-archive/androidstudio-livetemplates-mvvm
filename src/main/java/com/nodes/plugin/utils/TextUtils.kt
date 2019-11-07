@@ -23,5 +23,4 @@ object TextUtils {
 
     @JvmStatic
     fun String.caps() = this.capitalize()
-
 }
