@@ -13,7 +13,10 @@ class InteractorGenerator : BaseGenerator<Interactor>() {
 
     override fun additionalProperties(modelObject: Interactor, properties: Properties?): Properties? {
         return Properties().apply {
-            setProperty(TemplateProperties.RETURN_TYPE, modelObject.returnType)
+
+            setProperty(TemplateProperties.OUTPUT_TYPE, modelObject.outputType ?: "Unit")
+            setProperty(TemplateProperties.INPUT_TYPE, modelObject.inputType ?: "Unit")
+
             val pack = properties?.get(TemplateProperties.PACKAGE_NAME) as String?
             if (pack != null && pack.contains(".domain.")) {
                 val subPack = pack.substring(0, pack.indexOf(".domain."))

@@ -7,6 +7,8 @@ object TemplateProperties {
     const val VIEW_MODEL = "viewModel"
     const val CLASS_NAME = "className"
     const val RETURN_TYPE = "returnType"
+    const val OUTPUT_TYPE = "outputType"
+    const val INPUT_TYPE = "inputType"
     const val METHOD_NAME = "methodName"
     const val PARAM_NAME = "paramName"
     const val VIEW_STATE_CLASS = "vsClass"

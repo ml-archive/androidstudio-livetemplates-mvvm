@@ -3,9 +3,9 @@ package ${packageName}
 import javax.inject.Inject
 import ${packageDomainName}.domain.interactors.BaseAsyncInteractor
 
-class ${className} @Inject constructor(): BaseAsyncInteractor<${returnType}> {
+class ${className} @Inject constructor(): Interactor<${inputType}, ${outputType}> {
 
-    override suspend fun invoke(): ${returnType} {
+    override suspend fun invoke(): ${outputType} {
         TODO()
     }
 }

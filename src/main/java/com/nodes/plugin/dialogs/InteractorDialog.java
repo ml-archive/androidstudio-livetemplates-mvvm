@@ -1,17 +1,16 @@
 package com.nodes.plugin.dialogs;
 
 import com.nodes.plugin.models.Interactor;
-import org.apache.http.util.TextUtils;
-
-import javax.lang.model.SourceVersion;
-import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.lang.model.SourceVersion;
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import org.apache.http.util.TextUtils;
 
 public class InteractorDialog extends JDialog {
 
@@ -39,10 +38,15 @@ public class InteractorDialog extends JDialog {
 
         buttonOK.addActionListener(e -> onOK());
         buttonCancel.addActionListener(e -> onCancel());
-        outputCheckbox.addItemListener(itemEvent -> txtFieldOutputType.setEnabled(itemEvent.getStateChange() == ItemEvent.SELECTED));
+        outputCheckbox.addItemListener(
+                itemEvent ->
+                        txtFieldOutputType.setEnabled(
+                                itemEvent.getStateChange() == ItemEvent.SELECTED));
 
-        inputCheckBox.addItemListener(itemEvent -> txtFieldInputType.setEnabled(itemEvent.getStateChange() == ItemEvent.SELECTED));
-
+        inputCheckBox.addItemListener(
+                itemEvent ->
+                        txtFieldInputType.setEnabled(
+                                itemEvent.getStateChange() == ItemEvent.SELECTED));
 
         setFieldListener();
 
@@ -90,13 +94,17 @@ public class InteractorDialog extends JDialog {
 
     private void onOK() {
 
-        Interactor i = new Interactor(txtName.getText(), txtFieldInputType.getText());
+        Interactor i =
+                new Interactor(
+                        txtName.getText(),
+                        outputCheckbox.isSelected() ? txtFieldOutputType.getText() : null,
+                        inputCheckBox.isSelected() ? txtFieldInputType.getText() : null);
 
         if (!SourceVersion.isIdentifier(i.getName()) || SourceVersion.isKeyword(i.getName())) {
             txtError.setText("Invalid class name");
             return;
         }
-        if (TextUtils.isEmpty(i.getReturnType())) {
+        if (i.getOutputType() != null && TextUtils.isEmpty(i.getOutputType())) {
             txtError.setText("Return type cannot be empty");
             return;
         }

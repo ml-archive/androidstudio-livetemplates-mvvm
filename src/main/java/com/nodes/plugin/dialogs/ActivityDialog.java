@@ -2,16 +2,15 @@ package com.nodes.plugin.dialogs;
 
 import com.nodes.plugin.models.Activity;
 import com.nodes.plugin.utils.TextUtils;
-
-import javax.lang.model.SourceVersion;
-import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.lang.model.SourceVersion;
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class ActivityDialog extends JDialog {
 
