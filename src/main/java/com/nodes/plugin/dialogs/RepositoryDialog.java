@@ -1,16 +1,15 @@
 package com.nodes.plugin.dialogs;
 
 import com.nodes.plugin.models.Repository;
-import org.apache.http.util.TextUtils;
-
-import javax.lang.model.SourceVersion;
-import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.lang.model.SourceVersion;
+import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import org.apache.http.util.TextUtils;
 
 public class RepositoryDialog extends JDialog {
 
@@ -40,41 +39,44 @@ public class RepositoryDialog extends JDialog {
 
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                onCancel();
-            }
-        });
+        addWindowListener(
+                new WindowAdapter() {
+                    public void windowClosing(WindowEvent e) {
+                        onCancel();
+                    }
+                });
 
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(
                 e -> onCancel(),
                 KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
-                JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT
-        );
+                JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
     private void setFieldListener() {
-        txtName.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                updateClassName();
-            }
+        txtName.getDocument()
+                .addDocumentListener(
+                        new DocumentListener() {
+                            @Override
+                            public void insertUpdate(DocumentEvent e) {
+                                updateClassName();
+                            }
 
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                updateClassName();
-            }
+                            @Override
+                            public void removeUpdate(DocumentEvent e) {
+                                updateClassName();
+                            }
 
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                updateClassName();
-            }
-        });
+                            @Override
+                            public void changedUpdate(DocumentEvent e) {
+                                updateClassName();
+                            }
+                        });
     }
 
     private void updateClassName() {
-        txtClassName.setText(com.nodes.plugin.utils.TextUtils.caps(txtName.getText()) + "Repository");
+        txtClassName.setText(
+                com.nodes.plugin.utils.TextUtils.caps(txtName.getText()) + "Repository");
     }
 
     private void onOK() {
@@ -110,5 +112,4 @@ public class RepositoryDialog extends JDialog {
         dialog.setVisible(true);
         return dialog;
     }
-
 }

@@ -27,5 +27,4 @@ class FragmentAction : BaseAction<Fragment>() {
         ViewStateGenerator().generateFiles(directory, Naming(data.name))
         BuilderGenerator().generateFiles(directory, Naming(data.name, "Fragment", false, "${data.name.capitalize()}ViewModel"))
     }
-
 }

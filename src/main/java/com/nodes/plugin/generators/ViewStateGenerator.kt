@@ -2,8 +2,7 @@ package com.nodes.plugin.generators
 
 import com.nodes.plugin.TemplateMap
 import com.nodes.plugin.models.Naming
-import com.nodes.plugin.models.ViewModel
-import java.util.*
+import java.util.Properties
 
 class ViewStateGenerator : BaseGenerator<Naming>() {
 
@@ -14,7 +13,7 @@ class ViewStateGenerator : BaseGenerator<Naming>() {
 
     override fun additionalProperties(modelObject: Naming, properties: Properties?): Properties? {
         val pack = properties?.get(TemplateProperties.PACKAGE_NAME) as String?
-        return if(pack != null && pack.contains(".ui.")) {
+        return if (pack != null && pack.contains(".ui.")) {
             val subPack = pack.substring(0, pack.indexOf(".ui."))
             Properties().apply {
                 setProperty(TemplateProperties.PACKAGE_PRESENTATION_NAME, subPack)
@@ -23,5 +22,4 @@ class ViewStateGenerator : BaseGenerator<Naming>() {
             Properties()
         }
     }
-
 }

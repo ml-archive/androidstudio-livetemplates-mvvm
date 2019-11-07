@@ -2,7 +2,7 @@ package com.nodes.plugin.generators
 
 import com.nodes.plugin.TemplateMap
 import com.nodes.plugin.models.Interactor
-import java.util.*
+import java.util.Properties
 
 class InteractorGenerator : BaseGenerator<Interactor>() {
 
@@ -21,5 +21,4 @@ class InteractorGenerator : BaseGenerator<Interactor>() {
             }
         }
     }
-
 }

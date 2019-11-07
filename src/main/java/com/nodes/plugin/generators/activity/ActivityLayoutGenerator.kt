@@ -18,5 +18,4 @@ class ActivityLayoutGenerator : BaseGenerator<Activity>() {
     }
 
     private fun generateActivityLayoutName(name: String) = "activity_" + name.toLowerCase()
-
 }

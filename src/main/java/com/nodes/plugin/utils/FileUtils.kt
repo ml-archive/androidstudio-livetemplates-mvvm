@@ -10,7 +10,7 @@ object FileUtils {
     fun makeDir(directory: PsiDirectory, dirName: String): PsiDirectory? {
         var dir: PsiDirectory? = directory.findSubdirectory(dirName.toLowerCase())
 
-        if (dir?.isPhysical == true){
+        if (dir?.isPhysical == true) {
             return dir
         }
 
@@ -27,5 +27,4 @@ object FileUtils {
 
         return dir
     }
-
 }

@@ -4,7 +4,7 @@ import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
 import com.nodes.plugin.TemplateMap
 import com.nodes.plugin.utils.FileUtils
-import java.util.*
+import java.util.Properties
 
 abstract class BaseGenerator<T> {
 
@@ -38,5 +38,4 @@ abstract class BaseGenerator<T> {
         createFile = TemplateFileGenerator.generateFile(className, dir, getTemplate, properties)
         executeAdditionalActions(dir, createFile, modelObject)
     }
-
 }

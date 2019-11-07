@@ -27,5 +27,4 @@ class ActivityAction : BaseAction<Activity>() {
         ViewStateGenerator().generateFiles(directory, Naming(data.name, "Activity"))
         BuilderGenerator().generateFiles(directory, Naming(data.name, "Activity", viewModelName = "${data.name.capitalize()}ActivityViewModel"))
     }
-
 }

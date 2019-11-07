@@ -18,5 +18,4 @@ class InteractorAction : BaseAction<Interactor>() {
         super.onDialogOk(data)
         InteractorGenerator().generateFiles(directory, modelObject)
     }
-
 }

@@ -26,7 +26,6 @@ object TemplateFileGenerator {
             e.printStackTrace()
             null
         }
-
     }
 
     fun getDefaultProperties(directory: PsiDirectory): java.util.Properties {
@@ -48,5 +47,4 @@ object TemplateFileGenerator {
                 .fileIndex
                 .getPackageNameByDirectory(file.virtualFile)
     }
-
 }
