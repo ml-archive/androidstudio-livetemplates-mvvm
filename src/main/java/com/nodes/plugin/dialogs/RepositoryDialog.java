@@ -1,15 +1,16 @@
 package com.nodes.plugin.dialogs;
 
 import com.nodes.plugin.models.Repository;
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import org.apache.http.util.TextUtils;
+
 import javax.lang.model.SourceVersion;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import org.apache.http.util.TextUtils;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class RepositoryDialog extends JDialog {
 
