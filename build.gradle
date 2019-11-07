@@ -50,6 +50,10 @@ allprojects {
     }
 }
 
+build.doFirst {
+    spotlessCheck
+}
+
 tasks.withType(Jar) {
     destinationDir = file("$rootDir/distribution")
 }
