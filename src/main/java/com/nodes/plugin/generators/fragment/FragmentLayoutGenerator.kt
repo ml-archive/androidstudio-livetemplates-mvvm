@@ -8,7 +8,7 @@ import com.nodes.plugin.models.Fragment
 
 class FragmentLayoutGenerator : BaseGenerator<Fragment>() {
 
-    override val getTemplate: TemplateMap = TemplateMap.BASIC_LAYOUT
+    override var getTemplate: TemplateMap = TemplateMap.BASIC_LAYOUT
 
     override fun getPackageName(modelObject: Fragment) = modelObject.name
     override fun getClassName(modelObject: Fragment) = generateLayoutName(modelObject.name)

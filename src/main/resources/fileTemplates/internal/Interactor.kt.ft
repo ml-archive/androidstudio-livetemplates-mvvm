@@ -1,11 +1,11 @@
 package ${packageName}
 
 import javax.inject.Inject
-import ${packageDomainName}.domain.interactors.BaseAsyncInteractor
+import ${packageDomainName}.domain.interactors.Interactor
 
 class ${className} @Inject constructor(): Interactor<${inputType}, ${outputType}> {
 
-    override suspend fun invoke(): ${outputType} {
+    override suspend fun invoke(input: ${inputType}): ${outputType} {
         TODO()
     }
 }

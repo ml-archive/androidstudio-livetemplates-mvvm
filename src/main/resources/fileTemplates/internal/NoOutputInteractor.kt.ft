@@ -1,0 +1,11 @@
+package ${packageName}
+
+import javax.inject.Inject
+import ${packageDomainName}.domain.interactors.NoOutputInteractor
+
+class ${className} @Inject constructor(): NoOutputInteractor<${inputType}> {
+
+    override suspend fun invoke(input: ${inputType}) {
+        TODO()
+    }
+}

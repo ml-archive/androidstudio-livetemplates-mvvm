@@ -10,7 +10,8 @@ abstract class BaseGenerator<T> {
 
     private var createFile: PsiFile? = null
 
-    abstract val getTemplate: TemplateMap
+    abstract var getTemplate: TemplateMap
+    protected set
 
     abstract fun getClassName(modelObject: T): String
     abstract fun getPackageName(modelObject: T): String

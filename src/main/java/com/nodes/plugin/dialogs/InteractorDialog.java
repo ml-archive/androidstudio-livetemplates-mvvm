@@ -1,6 +1,7 @@
 package com.nodes.plugin.dialogs;
 
 import com.nodes.plugin.models.Interactor;
+
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyEvent;
@@ -10,6 +11,7 @@ import javax.lang.model.SourceVersion;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+
 import org.apache.http.util.TextUtils;
 
 public class InteractorDialog extends JDialog {
@@ -98,7 +100,8 @@ public class InteractorDialog extends JDialog {
                 new Interactor(
                         txtName.getText(),
                         outputCheckbox.isSelected() ? txtFieldOutputType.getText() : null,
-                        inputCheckBox.isSelected() ? txtFieldInputType.getText() : null);
+                        inputCheckBox.isSelected() ? txtFieldInputType.getText() : null
+                );
 
         if (!SourceVersion.isIdentifier(i.getName()) || SourceVersion.isKeyword(i.getName())) {
             txtError.setText("Invalid class name");

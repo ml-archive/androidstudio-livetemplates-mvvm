@@ -7,7 +7,7 @@ import java.util.Properties
 
 class RepositoryGenerator : BaseGenerator<Repository>() {
 
-    override val getTemplate = TemplateMap.REPOSITORY
+    override var getTemplate = TemplateMap.REPOSITORY
 
     override fun getClassName(modelObject: Repository) = "${modelObject.name}Repository"
     override fun getPackageName(modelObject: Repository) = modelObject.name

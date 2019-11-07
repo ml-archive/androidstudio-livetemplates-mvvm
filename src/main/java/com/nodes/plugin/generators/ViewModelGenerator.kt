@@ -6,7 +6,7 @@ import java.util.Properties
 
 class ViewModelGenerator : BaseGenerator<Naming>() {
 
-    override val getTemplate = TemplateMap.VIEW_MODEL
+    override var getTemplate = TemplateMap.VIEW_MODEL
 
     override fun getPackageName(modelObject: Naming) = modelObject.name
     override fun getClassName(modelObject: Naming) = "${modelObject.name.capitalize()}${modelObject.postFix ?: ""}ViewModel"

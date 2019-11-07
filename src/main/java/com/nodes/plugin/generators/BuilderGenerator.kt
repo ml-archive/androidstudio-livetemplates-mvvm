@@ -6,7 +6,7 @@ import java.util.Properties
 
 class BuilderGenerator : BaseGenerator<Naming>() {
 
-    override val getTemplate = TemplateMap.Builder
+    override var getTemplate = TemplateMap.Builder
 
     override fun getPackageName(modelObject: Naming) = modelObject.name
     override fun getClassName(modelObject: Naming) = "${modelObject.name.capitalize()}${if (modelObject.usePostFixInName) modelObject.postFix ?: "" else ""}Builder"

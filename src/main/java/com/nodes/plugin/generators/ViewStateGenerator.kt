@@ -6,7 +6,7 @@ import java.util.Properties
 
 class ViewStateGenerator : BaseGenerator<Naming>() {
 
-    override val getTemplate = TemplateMap.VIEW_STATE
+    override var getTemplate = TemplateMap.VIEW_STATE
 
     override fun getPackageName(modelObject: Naming) = modelObject.name
     override fun getClassName(modelObject: Naming) = "${modelObject.name.capitalize()}${modelObject.postFix ?: ""}ViewState"
