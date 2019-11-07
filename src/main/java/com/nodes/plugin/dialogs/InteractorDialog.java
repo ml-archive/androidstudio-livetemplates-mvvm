@@ -1,15 +1,17 @@
 package com.nodes.plugin.dialogs;
 
 import com.nodes.plugin.models.Interactor;
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import org.apache.http.util.TextUtils;
+
 import javax.lang.model.SourceVersion;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import org.apache.http.util.TextUtils;
+import java.awt.*;
+import java.awt.event.ItemEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class InteractorDialog extends JDialog {
 
@@ -19,7 +21,10 @@ public class InteractorDialog extends JDialog {
     private JTextField txtName;
     private JTextField txtClassName;
     private JLabel txtError;
-    private JTextField txtType;
+    private JCheckBox outputCheckbox;
+    private JCheckBox inputCheckBox;
+    private JTextField txtFieldInputType;
+    private JTextField txtFieldOutputType;
 
     private DialogListener<Interactor> listener;
 
@@ -34,6 +39,10 @@ public class InteractorDialog extends JDialog {
 
         buttonOK.addActionListener(e -> onOK());
         buttonCancel.addActionListener(e -> onCancel());
+        outputCheckbox.addItemListener(itemEvent -> txtFieldOutputType.setEnabled(itemEvent.getStateChange() == ItemEvent.SELECTED));
+
+        inputCheckBox.addItemListener(itemEvent -> txtFieldInputType.setEnabled(itemEvent.getStateChange() == ItemEvent.SELECTED));
+
 
         setFieldListener();
 
@@ -81,7 +90,7 @@ public class InteractorDialog extends JDialog {
 
     private void onOK() {
 
-        Interactor i = new Interactor(txtName.getText(), txtType.getText());
+        Interactor i = new Interactor(txtName.getText(), txtFieldInputType.getText());
 
         if (!SourceVersion.isIdentifier(i.getName()) || SourceVersion.isKeyword(i.getName())) {
             txtError.setText("Invalid class name");
