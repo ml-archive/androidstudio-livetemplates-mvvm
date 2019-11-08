@@ -1,0 +1,12 @@
+package ${packageName}
+
+#if (${roomAnnotations} == "true")
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+#end
+data class ${className}(
+    #if(${roomAnnotations} == "true")@PrimaryKey #end
+    #if(${domainEntity} == "true")override #end val id: Long
+) #if (${domainEntity} == "true") : DomainEntity #end

@@ -8,7 +8,7 @@ import java.util.Properties
 
 class FragmentGenerator : BaseGenerator<Fragment>() {
 
-    override val getTemplate: TemplateMap = TemplateMap.FRAGMENT
+    override var getTemplate: TemplateMap = TemplateMap.FRAGMENT
 
     override fun getPackageName(modelObject: Fragment) = modelObject.name
     override fun getClassName(modelObject: Fragment) = "${modelObject.name.capitalize()}Fragment"

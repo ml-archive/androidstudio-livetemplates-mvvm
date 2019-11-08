@@ -2,8 +2,9 @@ package com.nodes.plugin.actions
 
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.nodes.plugin.dialogs.RepositoryDialog
-import com.nodes.plugin.generators.RepositoryGenerator
-import com.nodes.plugin.generators.RepositoryImplGenerator
+import com.nodes.plugin.generators.repository.LocalDataSourceGenerator
+import com.nodes.plugin.generators.repository.RepositoryGenerator
+import com.nodes.plugin.generators.repository.RepositoryImplGenerator
 import com.nodes.plugin.models.Repository
 
 class RepositoryAction : BaseAction<Repository>() {
@@ -19,5 +20,6 @@ class RepositoryAction : BaseAction<Repository>() {
         super.onDialogOk(data)
         RepositoryGenerator().generateFiles(directory, modelObject)
         RepositoryImplGenerator().generateFiles(directory, modelObject)
+        LocalDataSourceGenerator().generateFiles(directory, modelObject)
     }
 }

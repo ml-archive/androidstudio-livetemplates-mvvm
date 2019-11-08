@@ -51,6 +51,13 @@
                         text="Interactor"
                         description="Create a new Interactor file"/>
 
+                <action id="NodesPlugin.NewMenu.Arch.Entity"
+                        text="Entity"
+                        icon="/icons/nodes.png"
+                        description="Create a new Entity"
+                        class="com.nodes.plugin.actions.EntityAction"
+                />
+
 <!--                <action id="NodesPlugin.NewMenu.Arch.ViewModel"-->
 <!--                        icon="/icons/nodes.png"-->
 <!--                        class="com.nodes.plugin.actions.ViewModelAction"-->

@@ -1,0 +1,28 @@
+package ${packageName}
+
+import kotlinx.coroutines.flow.Flow
+#if (${roomAnnotations} == "true")
+import androidx.room.Dao
+import androidx.room.Query
+
+@Dao
+#end
+interface ${className} #if (${roomAnnotations} == "true") : EntityDao<${domainEntity}>#end {
+
+    #if (${roomAnnotations} == "true") @Query("SELECT * FROM ${domainEntity}") #end
+    fun all(): Flow<List<${domainEntity}>>
+
+    #if (${roomAnnotations} == "true") @Query("SELECT * FROM ComicEntity WHERE id =:id") #end
+    suspend fun get${domainEntity}ById(id: Long): ${domainEntity}?
+
+    #if (${roomAnnotations} == "false")
+
+    suspend fun insert(obj: ${domainEntity})
+
+    suspend fun insert(vararg obj: ${domainEntity})
+
+    suspend fun update(obj: ${domainEntity})
+
+    suspend fun delete(obj: ${domainEntity})
+    #end
+}

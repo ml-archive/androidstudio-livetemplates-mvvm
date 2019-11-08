@@ -8,7 +8,7 @@ import com.nodes.plugin.models.Activity
 
 class ActivityLayoutGenerator : BaseGenerator<Activity>() {
 
-    override val getTemplate: TemplateMap = TemplateMap.BASIC_LAYOUT
+    override var getTemplate: TemplateMap = TemplateMap.BASIC_LAYOUT
 
     override fun getPackageName(modelObject: Activity) = modelObject.name
     override fun getClassName(modelObject: Activity) = generateActivityLayoutName(modelObject.name)

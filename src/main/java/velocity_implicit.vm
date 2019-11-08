@@ -1,0 +1,11 @@
+#* @implicitly included *#
+#* @vtlvariable name="domainEntity" type="boolean" *#
+#* @vtlvariable name="roomAnnotations" type="boolean" *#
+#* @vtlvariable name="packagePresentationName" type="String" *#
+#* @vtlvariable name="layoutName" type="String" *#
+#* @vtlvariable name="viewModel" type="String" *#
+#* @vtlvariable name="className" type="String" *#
+#* @vtlvariable name="outputType" type="String" *#
+#* @vtlvariable name="inputType" type="String" *#
+#* @vtlvariable name="packageDomainName" type="String" *#
+#* @vtlvariable name="packageName" type="String" *#

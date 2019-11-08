@@ -1,6 +1,7 @@
 package com.nodes.plugin.dialogs;
 
 import com.nodes.plugin.models.Repository;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
@@ -9,6 +10,7 @@ import javax.lang.model.SourceVersion;
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+
 import org.apache.http.util.TextUtils;
 
 public class RepositoryDialog extends JDialog {
@@ -20,6 +22,7 @@ public class RepositoryDialog extends JDialog {
     private JTextField txtClassName;
     private JLabel txtError;
     private JTextField txtType;
+    private JCheckBox checkBoxRoom;
 
     private DialogListener<Repository> listener;
 
@@ -81,7 +84,7 @@ public class RepositoryDialog extends JDialog {
 
     private void onOK() {
 
-        Repository r = new Repository(txtName.getText(), txtType.getText());
+        Repository r = new Repository(txtName.getText(), txtType.getText(), checkBoxRoom.isSelected());
 
         if (!SourceVersion.isIdentifier(r.getName()) || SourceVersion.isKeyword(r.getName())) {
             txtError.setText("Invalid class name");
