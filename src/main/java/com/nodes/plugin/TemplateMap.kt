@@ -15,5 +15,7 @@ enum class TemplateMap(val templateName: String) {
     VIEW_STATE("ViewState"),
     Builder("Builder"),
     BuilderFragment("BuilderFragment"),
-    BuilderActivity("BuilderActivity")
+    BuilderActivity("BuilderActivity"),
+    ENTITY("Entity"),
+    LOCAL_DATA_SOURCE("LocalDataSource")
 }

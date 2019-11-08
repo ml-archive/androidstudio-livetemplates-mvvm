@@ -1,22 +1,22 @@
 package ${packageName}
 
-import ${packageRepositoryName}.repositories.RepositoryException
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class ${className} @Inject constructor(): ${repositoryClass} {
+class ${className} @Inject constructor(
+    private val remoteDataSource: ${returnType}Api,
+    private val localDataSource: ${localDataSourceName}
+): ${repositoryClass} {
 
-    override suspend fun get${methodName}(cached: Boolean): ${returnType} {
-
-        // TODO Your code here
-
-        throw(RepositoryException(400, "", ""))
-    }
-
-    override suspend fun update${methodName}() {
+    override suspend fun get${methodName}(id: Long): ${returnType} {
         TODO() // your code here
     }
 
-    override suspend fun delete${methodName}() {
+    override suspend fun update${methodName}(${paramName}: ${returnType}) {
+        TODO() // your code here
+    }
+
+    override suspend fun delete${methodName}(${paramName}: ${returnType}) {
         TODO() // your code here
     }
 
@@ -24,4 +24,5 @@ class ${className} @Inject constructor(): ${repositoryClass} {
         TODO() // your code here
     }
 
+    override fun all(): Flow<List<${returnType}>> = localDataSource.all()
 }
